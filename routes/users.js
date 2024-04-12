@@ -1,6 +1,6 @@
 // Definir rotas
 import express from 'express';
-import { getUsers } from '../controllers/UserControler.js';
+import { getUsers, addUser, updateUser, deleteUser } from '../controllers/UserControler.js';
 
 const router = express.Router();
 
@@ -8,6 +8,9 @@ const router = express.Router();
 // router.get("/", () => {console.log("Rota de usuários acionada.")});
 router.get("/", getUsers);
 // Rota dentro da /users
+router.post("/", addUser);
+router.put("/", updateUser);
+router.delete("/", deleteUser);
 router.get("/teste", () => {
     console.log("teste adicionado")
 })
